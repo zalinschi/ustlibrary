@@ -1,7 +1,8 @@
 <?php
 /* Template: Library Single */
 
-$book_image = get_the_post_thumbnail_url(get_the_ID(),'full');
+$book_id = get_the_ID();
+$book_image = get_the_post_thumbnail_url($book_id,'full');
 ?>
 
 <div class="book-wrapper">
@@ -22,22 +23,30 @@ $book_image = get_the_post_thumbnail_url(get_the_ID(),'full');
 			<?php the_excerpt(); ?>
 		</p>
 		<a class="pdf-open">
-			<?php _e('Read the book','b3c-library'); ?>
+			<?php _e('Read the book','b3c-library'); 	?>
 		</a>
+
 	</div>
 </div>
 
-<?php
-$meta = get_post_meta( $books->ID );
-$book_print = $meta['book_print'][0];
 
-echo "Print = ".$book_print;
-
-?>
 <div class="pdf-viewer" >
 	<a class="pdf-close">✗</a>
 	<?php
-		$pdf_link =  get_post_meta( get_the_ID(), 'book_pdf_link', true);
-		echo do_shortcode("[pdfjs-viewer url=$pdf_link]");
+
+
+		$meta = get_post_meta( $book_id );
+		$pdf_link =  $meta['book_pdf_link'][0];
+		
+		if($meta['book_print'][0] == 1){ $is_printable = 'false'; }
+		else { $is_printable = 'true'; }
+
+		if($meta['book_download'][0] == 1){ $is_downloadable = 'false'; } 
+		else { $is_downloadable = 'true'; }
+
+		if($meta['book_copypaste'][0] == 1){ $is_copy_paste = 'false'; }
+		else{ $is_copy_paste = 'true'; }
+
+		echo do_shortcode("[pdfjs-viewer url=$pdf_link download=$is_downloadable print=$is_printable cp=$is_copy_paste]");
 	?>
 </div>
