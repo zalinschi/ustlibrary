@@ -27,6 +27,13 @@ $book_image = get_the_post_thumbnail_url(get_the_ID(),'full');
 	</div>
 </div>
 
+<?php
+$meta = get_post_meta( $books->ID );
+$book_print = $meta['book_print'][0];
+
+echo "Print = ".$book_print;
+
+?>
 <div class="pdf-viewer" >
 	<a class="pdf-close">✗</a>
 	<?php
