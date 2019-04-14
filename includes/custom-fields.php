@@ -17,9 +17,9 @@ function display_book_details_cf( $books ) {
 	$book_isbn  = ( isset( $meta['book_isbn'][0] ) && '' !== $meta['book_isbn'][0] ) ? $meta['book_isbn'][0] : '';
 	$book_issn  = ( isset( $meta['book_issn'][0] ) && '' !== $meta['book_issn'][0] ) ? $meta['book_issn'][0] : '';
 
-	$book_print = ( isset( $meta['book_print'][0] ) &&  '1' === $meta['book_print'][0] ) ? 1 : 0;
-	$book_copypaste = ( isset( $meta['book_copypaste'][0] ) &&  '1' === $meta['book_copypaste'][0] ) ? 1 : 0;
-	$book_download = ( isset( $meta['book_download'][0] ) &&  '1' === $meta['book_download'][0] ) ? 1 : 0;
+	$book_print = $meta['book_print'][0];
+	$book_copypaste = $meta['book_copypaste'][0];
+	$book_download =  $meta['book_download'][0];
 	?>
 		<table style='border-spacing: 0; width:100%;'>
 			<tr>
@@ -148,10 +148,10 @@ function ustlib_save_metabox( $post_id,$cpt_name) {
 		update_post_meta( $post_id, 'book_print', esc_attr( $book_print ) );
 
 		$book_copypaste = ( isset( $_POST['book_copypaste'] ) && '1' === $_POST['book_copypaste'] ) ? 1 : 0;
-		update_post_meta( $post_id, 'book_copypaste', esc_attr( $book_print ) );
+		update_post_meta( $post_id, 'book_copypaste', esc_attr( $book_copypaste ) );
 
 		$book_download = ( isset( $_POST['book_download'] ) && '1' === $_POST['book_download'] ) ? 1 : 0;
-		update_post_meta( $post_id, 'book_download', esc_attr( $book_print ) );
+		update_post_meta( $post_id, 'book_download', esc_attr( $book_download ) );
 
     }
 }
