@@ -23,7 +23,7 @@
   		<?php  get_library_term('year_book');  ?>  
   	</div>
     <span class="excerpt">
-		  <?php the_excerpt(); ?> 
+		  <?php echo get_the_excerpt_protected_disable(); ?>
 	 </span>
     <a class="button button-primary" href="<?php the_permalink(); ?>" rel="bookmark"> <?php _e('Read more'); ?> </a>
   </div>
