@@ -89,3 +89,30 @@ function get_the_library_title(){
    return '… <a href="'. get_permalink($post->ID) . '">' . __('Read more').' &raquo;' . '</a>';
    }
    add_filter('excerpt_more', 'new_excerpt_more');
+
+
+//DISPLAY BOOK IN SINGLR FRONT
+function display_book(){
+?>
+<div class="pdf-viewer" >
+	<a class="pdf-close">✗</a>
+	<?php
+
+
+		$meta = get_post_meta(  get_the_ID() );
+		$pdf_link =  $meta['book_pdf_link'][0];
+		
+		if($meta['book_print'][0] == 1){ $is_printable = 'false'; }
+		else { $is_printable = 'true'; }
+
+		if($meta['book_download'][0] == 1){ $is_downloadable = 'false'; } 
+		else { $is_downloadable = 'true'; }
+
+		if($meta['book_copypaste'][0] == 1){ $is_copy_paste = 'false'; }
+		else{ $is_copy_paste = 'true'; }
+
+		echo do_shortcode("[pdfjs-viewer url=$pdf_link download=$is_downloadable print=$is_printable cp=$is_copy_paste]");
+	?>
+</div>
+<?php
+}

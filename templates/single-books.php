@@ -22,31 +22,20 @@ $book_image = get_the_post_thumbnail_url($book_id,'full');
 		<p class="description">
 			<?php the_excerpt(); ?>
 		</p>
-		<a class="pdf-open">
-			<?php _e('Read the book','ust-library'); 	?>
-		</a>
 
+		<?php if ( !post_password_required() ) : ?>		
+			<a class="pdf-open">
+				<?php _e('Read the book','ust-library'); 	?>
+			</a>
+		<?php else: ?>
+			<?php echo "<div id='passwordForm' >".get_the_password_form()."</div>"; ?>
+		<?php endif; ?>
 	</div>
 </div>
 
+<?php 
+	if ( !post_password_required() ) :  //is_user_logged_in() && !current_user_can( 'subscriber' ) && 
+			display_book();
+	endif;
 
-<div class="pdf-viewer" >
-	<a class="pdf-close">✗</a>
-	<?php
-
-
-		$meta = get_post_meta( $book_id );
-		$pdf_link =  $meta['book_pdf_link'][0];
-		
-		if($meta['book_print'][0] == 1){ $is_printable = 'false'; }
-		else { $is_printable = 'true'; }
-
-		if($meta['book_download'][0] == 1){ $is_downloadable = 'false'; } 
-		else { $is_downloadable = 'true'; }
-
-		if($meta['book_copypaste'][0] == 1){ $is_copy_paste = 'false'; }
-		else{ $is_copy_paste = 'true'; }
-
-		echo do_shortcode("[pdfjs-viewer url=$pdf_link download=$is_downloadable print=$is_printable cp=$is_copy_paste]");
-	?>
-</div>
+ ?>
