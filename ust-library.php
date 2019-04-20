@@ -47,5 +47,5 @@ add_action( 'admin_enqueue_scripts', 'mytheme_enqueue_options_style' );
 
 add_action( 'plugins_loaded', 'true_load_plugin_textdomain' );
 function true_load_plugin_textdomain() {
-  load_plugin_textdomain( 'ust-library', false, plugin_dir. 'languages' ); 
+  load_plugin_textdomain( 'ust-library', false, dirname( plugin_basename(__FILE__) ).'/language/' ); 
 }
