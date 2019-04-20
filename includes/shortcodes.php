@@ -47,17 +47,19 @@ function b4uloop($atts) {
       include( plugin_dir . '/templates/loop-books.php');
     endwhile; 
 
-    if($pagination == 'true'): ?>
-      <div class="navHolder">
-        <div class="nav-prev nav-previous">
-          <?php previous_posts_link( __('Back').' &laquo;' ); ?>
-        </div>
-       <div class="nav-next">
-         <?php next_posts_link( __('Next').' &raquo;', $the_query->max_num_pages ); ?>
-       </div>
-      </div>
-    <?php endif;
-   // wp_reset_postdata(); ?>
+    if($pagination == 'true'):
+		$big = 999999999; // need an unlikely integer
+		 echo paginate_links( array(
+		    'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+		    'format' => '?paged=%#%',
+		    'current' => max( 1, get_query_var('paged') ),
+		    'total' => $the_query->max_num_pages
+		) );
+
+		
+ 	endif;
+ 	wp_reset_postdata();
+ ?>
 
   <?php else : ?>
     <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
