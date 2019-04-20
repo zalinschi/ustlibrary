@@ -23,7 +23,7 @@ $book_image = get_the_post_thumbnail_url($book_id,'full');
 			<?php the_excerpt(); ?>
 		</p>
 		<a class="pdf-open">
-			<?php _e('Read the book','b3c-library'); 	?>
+			<?php _e('Read the book','ust-library'); 	?>
 		</a>
 
 	</div>

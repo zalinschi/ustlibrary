@@ -1,0 +1,227 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Biblioteca Digitală\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-20 18:54+0000\n"
+"PO-Revision-Date: 2019-04-20 18:56+0000\n"
+"Last-Translator: admin <viaceslav.zalinschi@gmail.com>\n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && "
+"n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.2.2; wp-5.0.4"
+
+#: includes/custom-fields.php:27
+msgid "Number of pages"
+msgstr ""
+
+#: includes/custom-fields.php:32
+msgid "ISBN"
+msgstr ""
+
+#: includes/custom-fields.php:37
+msgid "ISSN"
+msgstr ""
+
+#: includes/custom-fields.php:45
+msgid "Copy Paste Disable ?"
+msgstr ""
+
+#: includes/custom-fields.php:52
+msgid "Disable Download ?"
+msgstr ""
+
+#: includes/custom-fields.php:59
+msgid "Disable Print ?"
+msgstr ""
+
+#: includes/custom-fields.php:84
+msgid "Upload PDF"
+msgstr ""
+
+#: includes/custom-fields.php:105
+msgid "Select a PDF file"
+msgstr ""
+
+#: includes/function.php:14
+msgid "Categories"
+msgstr ""
+
+#: includes/function.php:17 includes/register-post-type.php:120
+msgid "Language"
+msgstr ""
+
+#: includes/function.php:20 includes/register-post-type.php:72
+msgid "Author"
+msgstr ""
+
+#: includes/function.php:23
+msgid "Publishing house"
+msgstr ""
+
+#: includes/function.php:26 includes/register-post-type.php:104
+msgid "Year"
+msgstr ""
+
+#: includes/function.php:29
+msgid "Tags"
+msgstr ""
+
+#: includes/function.php:63
+#, php-format
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: includes/function.php:65
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: includes/function.php:67
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: includes/function.php:69
+msgid "Category:"
+msgstr ""
+
+#: includes/function.php:71
+msgid "Author: "
+msgstr ""
+
+#: includes/function.php:73
+msgid "Publishing house: "
+msgstr ""
+
+#: includes/function.php:75
+msgid "Edition year: "
+msgstr ""
+
+#: includes/function.php:77
+msgid "Tag: "
+msgstr ""
+
+#: includes/function.php:79
+msgid "Book language: "
+msgstr ""
+
+#: includes/register-post-type.php:5 includes/register-post-type.php:7
+msgid "Books"
+msgstr ""
+
+#: includes/register-post-type.php:6 includes/register-post-type.php:8
+msgid "Book"
+msgstr ""
+
+#: includes/register-post-type.php:9
+msgid "Add New"
+msgstr ""
+
+#: includes/register-post-type.php:10
+msgid "Add New Book"
+msgstr ""
+
+#: includes/register-post-type.php:11
+msgid "New Book"
+msgstr ""
+
+#: includes/register-post-type.php:12
+msgid "Edit Book"
+msgstr ""
+
+#: includes/register-post-type.php:13
+msgid "View Book"
+msgstr ""
+
+#: includes/register-post-type.php:14
+msgid "All Books"
+msgstr ""
+
+#: includes/register-post-type.php:15
+msgid "Search Books"
+msgstr ""
+
+#: includes/register-post-type.php:16
+msgid "Parent Books:"
+msgstr ""
+
+#: includes/register-post-type.php:40
+msgid "Category book"
+msgstr ""
+
+#: includes/register-post-type.php:41
+msgid "Add category"
+msgstr ""
+
+#: includes/register-post-type.php:42
+msgid "New category"
+msgstr ""
+
+#: includes/register-post-type.php:56
+msgid "Book tags"
+msgstr ""
+
+#: includes/register-post-type.php:57
+msgid "Add tag"
+msgstr ""
+
+#: includes/register-post-type.php:58
+msgid "New tag"
+msgstr ""
+
+#: includes/register-post-type.php:73
+msgid "Add Author"
+msgstr ""
+
+#: includes/register-post-type.php:74
+msgid "New Author"
+msgstr ""
+
+#: includes/register-post-type.php:88
+msgid "publishing house"
+msgstr ""
+
+#: includes/register-post-type.php:89
+msgid "Add publishing house"
+msgstr ""
+
+#: includes/register-post-type.php:90
+msgid "New publishing house"
+msgstr ""
+
+#: includes/register-post-type.php:105
+msgid "Add Year"
+msgstr ""
+
+#: includes/register-post-type.php:106
+msgid "New Year"
+msgstr ""
+
+#: includes/register-post-type.php:121
+msgid "Add Language"
+msgstr ""
+
+#: includes/register-post-type.php:122
+msgid "New Language"
+msgstr ""
+
+#: templates/single-books.php:26
+msgid "Read the book"
+msgstr ""
+
+#. Name of the plugin
+msgid "Digital Library"
+msgstr ""
+
+#. Description of the plugin
+msgid "Plugin for creating a digital library"
+msgstr ""
+
+#. Author of the plugin
+msgid "Zalinschi Veaceslav"
+msgstr ""

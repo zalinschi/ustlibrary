@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: Biblioteca Digitală
+Plugin Name: Digital Library
 Author: Zalinschi Veaceslav
-Description: Aceasta va fi o Bibliotecă Digitală.
+Description: Plugin for creating a digital library
 */
 
 //Definim constanta URL mapa pluginului
@@ -44,3 +44,8 @@ function mytheme_enqueue_options_style() {
 }
 add_action( 'admin_enqueue_scripts', 'mytheme_enqueue_options_style' );
 */
+
+add_action( 'plugins_loaded', 'true_load_plugin_textdomain' );
+function true_load_plugin_textdomain() {
+  load_plugin_textdomain( 'ust-library', false, plugin_dir. 'languages' ); 
+}

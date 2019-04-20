@@ -24,17 +24,17 @@ function display_book_details_cf( $books ) {
 		<table style='border-spacing: 0; width:100%;'>
 			<tr>
 				<td style="width: 33.33%">
-					<label><?php _e('Numărul de pagini','b3c_library'); ?></label>
+					<label><?php _e('Number of pages','ust-library'); ?></label>
 					<input  type='number' name='book_pages'  value='<?php echo $book_pages; ?>'  /> 
 				</td>
 
 				<td style="width: 33.33%">
-					<label><?php _e('ISBN','b3c_library') ?></label>
+					<label><?php _e('ISBN','ust-library') ?></label>
 					<input  type='text' name='book_isbn'  value='<?php echo $book_isbn; ?>'  />
 				</td>
 
 				<td style="width: 33.33%">
-					<label><?php _e('ISSN','b3c_library') ?></label>
+					<label><?php _e('ISSN','ust-library') ?></label>
 					<input  type='text' name='book_issn'  value='<?php echo $book_issn; ?>'  />
 				</td>
 			</tr>
@@ -42,21 +42,21 @@ function display_book_details_cf( $books ) {
 				<td style="width: 33.33%">
 					<label>
 						<input type="checkbox" name="book_copypaste" value="1" <?php checked( $book_copypaste, 1 ); ?> />
-						<?php esc_attr_e( 'Copy Paste Disable ?', 'b3c_library' ); ?>
+						<?php esc_attr_e( 'Copy Paste Disable ?', 'ust-library' ); ?>
 					</label>
 				</td>
 
 				<td style="width: 33.33%">
 					<label>
 						<input type="checkbox" name="book_download" value="1" <?php checked( $book_download, 1 ); ?> />
-						<?php esc_attr_e( 'Disable Download ?', 'b3c_library' ); ?>
+						<?php esc_attr_e( 'Disable Download ?', 'ust-library' ); ?>
 					</label>
 				</td>
 
 				<td style="width: 33.33%"> 
 					<label>
 						<input type="checkbox" name="book_print" value="1" <?php checked( $book_print, 1 ); ?> />
-						<?php esc_attr_e( 'Disable Print ?', 'b3c_library' ); ?>
+						<?php esc_attr_e( 'Disable Print ?', 'ust-library' ); ?>
 					</label>
 				</td>
 			</tr>
@@ -81,7 +81,7 @@ function display_preview_book_cf( $books ) {
 		<table style='border-spacing: 0; width:100%;'>
 			<tr>
 				<td style="width: 100px;">
-					<input style="margin-left: 3px" id="uploadbutton" type="button" class="button button-primary button-large" value="Upload PDF">  
+					<input style="margin-left: 3px" id="uploadbutton" type="button" class="button button-primary button-large" value="<?php _e('Upload PDF','ust-library'); ?>">  
 				</td>
 				<td> 
 					<input  id="pdflink" type='text' name='book_pdf_link' placeholder="URL PDF" value='<?php echo $book_pdf_link; ?>' style="width: 100%" /> 
@@ -102,7 +102,7 @@ function display_preview_book_cf( $books ) {
 
 				   	        t.preventDefault();
 				   	        var r = wp.media({
-				   	            title: "Selectează un fișier PDF",
+				   	            title: "<?php _e("Select a PDF file","ust-library") ?>",
 				   	            multiple: !1
 				   	        }).open().on("select", function(t) {
 				   	            var i = r.state().get("selection").first().toJSON().url;

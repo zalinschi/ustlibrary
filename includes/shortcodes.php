@@ -1,116 +1,67 @@
 <?php
 
 
-function b4uloop($atts) {
 
-   // EXAMPLE USAGE:
-   // [library-loop post_per_page="10" order="ASC" taxonomy="category_book" terms="matematica" pagination="false"]
-   
-   // Defaults
-   extract(shortcode_atts(array(
-      "posts_per_page" => 5,
-      "showposts" => 100,
-      "order" => 'DESC',
-      "taxonomy" => '',
-      "terms" => '',
-      "pagination" => 'true',
+function b3c_library_loop($atts){
 
-   ), $atts));
+ // Defaults
+ extract(shortcode_atts(array(
+    "posts_per_page" => '',
+    "order" => 'DESC',
+    "taxonomy" => '',
+    "terms" => '',
+    "pagination" => 'true',
 
-  global $post; 
+ ), $atts));
 
 
 
-  $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
- 
 
-  $args = array(
-    'post_type'              => 'b3c_library',
-    'posts_per_page'         => $posts_per_page,
-    'order'                  => $order,
-    'paged' => $paged,
-  );
 
+ob_start();
+
+  if( $pagination == "true" ):
+    if ( get_query_var('paged') ) {
+      $paged = get_query_var('paged');
+    } elseif ( get_query_var('page') ) {
+      $paged = get_query_var('page');
+    } else {
+      $paged = 1;
+    }
+  endif;
+
+  $args =  array( 'post_type' => 'b3c_library',  'order' => $order );
+  
+  if( $pagination == "true" ) $args['paged'] =  $paged; 
+  if( !empty($posts_per_page) ) $args['posts_per_page'] =  $posts_per_page;
   if( !empty($taxonomy) ):
-  $args['tax_query'] =  array(array(
-                         'taxonomy' => $taxonomy, // ex: 'category_book'
+    $args['tax_query'] =  array(array(
+                         'taxonomy' => $taxonomy, // ex: 'book_category'
                          'field' => 'slug',
                          'terms' => $terms, //slug-taxonomy ex: 'matematica'
                         ));
   endif;
 
-  $the_query = new WP_Query( $args );
-  if ( $the_query->have_posts() ) :
+  query_posts( $args );
 
-    while ( $the_query->have_posts() ) : $the_query->the_post(); 
+  if (have_posts() ) :
+    while( have_posts() ): the_post();
       include( plugin_dir . '/templates/loop-books.php');
     endwhile; 
+    
+    if( $pagination == "true" ) echo paginate_links();
 
-    if($pagination == 'true'):
-		$big = 999999999; // need an unlikely integer
-		 echo paginate_links( array(
-		    'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
-		    'format' => '?paged=%#%',
-		    'current' => max( 1, get_query_var('paged') ),
-		    'total' => $the_query->max_num_pages
-		) );
+    wp_reset_postdata(); 
+    wp_reset_query();
 
-		
- 	endif;
- 	wp_reset_postdata();
- ?>
+  else:
+    _e( 'Sorry, no posts matched your criteria.' );
+  endif;
 
-  <?php else : ?>
-    <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-  <?php endif; ?>
-
-
-<?php 
+  $output = ob_get_contents();
+  ob_end_clean();
+  return $output;
 }
 
-
-
-
-
-function b4uloop2($atts) {
-
-$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-
-$args = array(
-    'post_type'=>'b3c_library', // Your post type name
-    'posts_per_page' => 6,
-    'paged' => $paged,
-);
-
-$loop = new WP_Query( $args );
-if ( $loop->have_posts() ) {
-    while ( $loop->have_posts() ) : $loop->the_post();
-
-             include( plugin_dir . '/templates/loop-books.php');
-
-    endwhile;
-
-    $total_pages = $loop->max_num_pages;
-
-    if ($total_pages > 1){
-
-        $current_page = max(1, get_query_var('paged'));
-
-        echo paginate_links(array(
-            'base' => get_pagenum_link(1) . '%_%',
-            'format' => '/page/%#%',
-            'current' => $current_page,
-            'total' => $total_pages,
-            'prev_text'    => __('« prev'),
-            'next_text'    => __('next »'),
-        ));
-    }    
-}
-wp_reset_postdata();
-
-}
-
-
-add_shortcode("library-loop", "b4uloop2");
- 
+add_shortcode('library-loop', 'b3c_library_loop');  

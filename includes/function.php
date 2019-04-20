@@ -10,23 +10,23 @@ function get_library_term($term_name){
 	<?php
 		//TITLUL
 		switch ($term_name) {
-			case 'book_category':
-				echo "Categorii:";
+			case 'book_category': 
+				echo __("Categories","ust-library")." :";
 			break;
 			case 'lang_book':
-				echo "Limba:";
+				echo __("Language","ust-library")." :";
 			break;
 			case 'author_book':
-				echo "Autor:";
+				echo __("Author","ust-library")." :";
 			break;
 			case 'pubhouse_book':
-				echo "Editura:";
+				echo __("Publishing house","ust-library")." :";
 			break;
 			case 'year_book':
-				echo "Anul:";
+				echo __("Year","ust-library")." :";
 			break;
 			case 'tag_book':
-				echo "Etichete:";
+				echo __("Tags","ust-library")." :";
 			break;
 		}
 	?>
@@ -60,23 +60,23 @@ function get_template_part_book(){
 
 function get_the_library_title(){
 	if ( is_day() ) :
-		printf( __( 'Daily Archives: %s','b3c-library'), '<span>' . get_the_date() . '</span>' );
+		printf( __( 'Daily Archives: %s'), '<span>' . get_the_date() . '</span>' );
 	elseif ( is_month() ) :
-		printf( __( 'Monthly Archives: %s', 'b3c-library' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'twentytwelve' ) ) . '</span>' );
+		printf( __( 'Monthly Archives: %s'), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format' ) ) . '</span>' );
 	elseif ( is_year() ) :
-		printf( __( 'Yearly Archives: %s' ,'b3c-library' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format') ) . '</span>' );
+		printf( __( 'Yearly Archives: %s'), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format') ) . '</span>' );
 	elseif ( is_tax('book_category') ) :
-		_e( 'Category:','b3c-library'); echo single_cat_title();
+		echo __( 'Category','ust-library').': '.single_cat_title();
 	elseif ( is_tax('author_book') ) :
-		_e( 'Author: ','b3c-library'); echo single_cat_title();
+		echo __( 'Author','ust-library').': '.single_cat_title();
 	elseif ( is_tax('pubhouse_book') ) :
-		_e( 'Publishing house: ','b3c-library'); echo single_cat_title();
+		echo __( 'Publishing house','ust-library').': '.single_cat_title();
 	elseif ( is_tax('year_book') ) :
-		_e( 'Edition year: ','b3c-library'); echo single_cat_title();
+		echo __( 'Edition year','ust-library').': '.single_cat_title();
 	elseif ( is_tax('tag_book') ) :
-		_e( 'Tag: ','b3c-library'); echo single_cat_title();
+		echo __( 'Tag','ust-library').': '.single_cat_title();
 	elseif ( is_tax('lang_book') ) :
-		_e( 'Book language: ','b3c-library'); echo single_cat_title();
+		echo __( 'Book language','ust-library').': '.single_cat_title();
 	else :
 		_e( 'Library');
 	endif;
@@ -86,6 +86,6 @@ function get_the_library_title(){
 
    function new_excerpt_more($more) {
    global $post;
-   return '… <a href="'. get_permalink($post->ID) . '">' . 'Read More &raquo;' . '</a>';
+   return '… <a href="'. get_permalink($post->ID) . '">' . __('Read more').' &raquo;' . '</a>';
    }
    add_filter('excerpt_more', 'new_excerpt_more');

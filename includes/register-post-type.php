@@ -2,18 +2,18 @@
 
 function ustlib_setup_init() {
 	$labels = array(
-        'name'                  => 'Books',
-        'singular_name'         => 'Book',
-        'menu_name'             => 'Books',
-        'name_admin_bar'        => 'Book',
-        'add_new'               => 'Add New',
-        'add_new_item'          => 'Add New Book',
-        'new_item'              => 'New Book',
-        'edit_item'             => 'Edit Book',
-        'view_item'             => 'View Book',
-        'all_items'             => 'All Books',
-        'search_items'          => 'Search Books',
-        'parent_item_colon'     => 'Parent Books:',
+        'name'                  => __('Books', 'ust-library'),
+        'singular_name'         => __('Book', 'ust-library'),
+        'menu_name'             => __('Books', 'ust-library'),
+        'name_admin_bar'        => __('Book', 'ust-library'),
+        'add_new'               => __('Add New', 'ust-library'),
+        'add_new_item'          => __('Add New Book', 'ust-library'),
+        'new_item'              => __('New Book', 'ust-library'),
+        'edit_item'             => __('Edit Book', 'ust-library'),
+        'view_item'             => __('View Book', 'ust-library'),
+        'all_items'             => __('All Books', 'ust-library'),
+        'search_items'          => __('Search Books', 'ust-library'),
+        'parent_item_colon'     => __('Parent Books:', 'ust-library'),
  
     );
  
@@ -37,9 +37,9 @@ function ustlib_setup_init() {
 
 	$cat_args = array( 
 		'labels' => array(
-						'name' => 'Categorii cărți',
-						'add_new_item' => 'Adaugă categorie',
-						'new_item_name' => "Categorie nouă"
+						'name' => __('Category book','ust-library'),
+						'add_new_item' =>  __('Add category','ust-library'),
+						'new_item_name' => __('New category','ust-library'),
 					),
 		'show_ui' => true,
 		'public' => true,
@@ -53,9 +53,9 @@ function ustlib_setup_init() {
 	// ETICHETE
 	$tag_args = array( 
 		'labels' => array(
-						'name' => 'Etichete cărți',
-						'add_new_item' => 'Adaugă eticheta',
-						'new_item_name' => "Eticheta nouă"
+						'name' => __('Book tags','ust-library'),
+						'add_new_item' =>  __('Add tag','ust-library'),
+						'new_item_name' => __('New tag','ust-library'),
 					),
 		'show_ui' => true,
 		'public' => true,
@@ -69,9 +69,9 @@ function ustlib_setup_init() {
 	//AUTHOR
 	$author_args = array( 
 		'labels' => array(
-						'name' => 'Autor',
-						'add_new_item' => 'Adaugă autor',
-						'new_item_name' => "Autor nou"
+						'name' => __('Author','ust-library'),
+						'add_new_item' => __('Add Author','ust-library'),
+						'new_item_name' =>  __('New Author','ust-library'),
 					),
 		'show_ui' => true,
 		'public' => true,
@@ -85,9 +85,9 @@ function ustlib_setup_init() {
 	//EDITURA
 	$publishing_house_args = array( 
 		'labels' => array(
-						'name' => 'Editura',
-						'add_new_item' => 'Adaugă editura',
-						'new_item_name' => "Editura noua"
+						'name' =>  __('publishing house','ust-library'),
+						'add_new_item' => __('Add publishing house','ust-library'),
+						'new_item_name' => __('New publishing house','ust-library'),
 					),
 		'show_ui' => true,
 		'public' => true,
@@ -101,9 +101,9 @@ function ustlib_setup_init() {
 	//AN
 	$year_args = array( 
 		'labels' => array(
-						'name' => 'Anul',
-						'add_new_item' => 'Adaugă an',
-						'new_item_name' => "An nou"
+						'name' => __('Year','ust-library'),
+						'add_new_item' => __('Add Year','ust-library'),
+						'new_item_name' => __('New Year','ust-library'),
 					),
 		'show_ui' => true,
 		'public' => true,
@@ -117,9 +117,9 @@ function ustlib_setup_init() {
 	//Lang
 	$lang_args = array( 
 		'labels' => array(
-						'name' => 'Limba',
-						'add_new_item' => 'Adaugă limba',
-						'new_item_name' => "limba noua"
+						'name' => __('Language','ust-library'),
+						'add_new_item' => __('Add Language','ust-library'),
+						'new_item_name' => __('New Language','ust-library'),
 					),
 		'show_ui' => true,
 		'public' => true,
