@@ -116,3 +116,17 @@ function display_book(){
 </div>
 <?php
 }
+
+
+function get_the_excerpt_protected_disable( $post = null ) {
+    if ( is_bool( $post ) ) {
+        _deprecated_argument( __FUNCTION__, '2.3.0' );
+    }
+ 
+    $post = get_post( $post );
+    if ( empty( $post ) ) {
+        return '';
+    }
+
+    return apply_filters( 'get_the_excerpt', $post->post_excerpt, $post );
+}

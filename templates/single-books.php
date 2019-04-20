@@ -20,7 +20,7 @@ $book_image = get_the_post_thumbnail_url($book_id,'full');
 			?>
 		</div>
 		<p class="description">
-			<?php the_excerpt(); ?>
+			<?php echo get_the_excerpt_protected_disable(); ?>
 		</p>
 
 		<?php if ( !post_password_required() ) : ?>		
