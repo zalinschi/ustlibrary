@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Biblioteca Digitală\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-20 19:12+0000\n"
-"PO-Revision-Date: 2019-04-20 19:30+0000\n"
+"POT-Creation-Date: 2019-04-21 00:07+0000\n"
+"PO-Revision-Date: 2019-04-21 00:11+0000\n"
 "Last-Translator: admin <viaceslav.zalinschi@gmail.com>\n"
-"Language-Team: Română\n"
+"Language-Team: Romanian\n"
 "Language: ro_RO\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 :(((n%100>19)||(( n%100==0)&&(n!"
 "=0)))? 2 : 1));\n"
@@ -15,6 +15,18 @@ msgstr ""
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.2.2; wp-5.0.4"
 
+#: includes/custom-fields.php:7
+msgid "Preview book"
+msgstr "Previzualizarea cărții"
+
+#: includes/custom-fields.php:8
+msgid "Book Cover Color"
+msgstr "Culoarea copertei"
+
+#: includes/custom-fields.php:9
+msgid "Book Details"
+msgstr "Despre carte "
+
 #: includes/custom-fields.php:27
 msgid "Number of pages"
 msgstr ""
@@ -23,11 +35,11 @@ msgstr ""
 
 #: includes/custom-fields.php:32
 msgid "ISBN"
-msgstr ""
+msgstr "ISBN"
 
 #: includes/custom-fields.php:37
 msgid "ISSN"
-msgstr ""
+msgstr "ISSN"
 
 #: includes/custom-fields.php:45
 msgid "Copy Paste Disable ?"
@@ -216,7 +228,7 @@ msgstr ""
 msgid "New Language"
 msgstr "Adaugă limbă nouă"
 
-#: templates/single-books.php:26
+#: templates/single-books.php:28
 msgid "Read the book"
 msgstr ""
 "\n"

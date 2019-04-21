@@ -4,9 +4,9 @@
  */
 
 function cpt_biblioteca_setup_meta_box() {
-	add_meta_box('cf_preview_book','Preview book','display_preview_book_cf','b3c_library', 'normal', 'high' );
-	add_meta_box('cf_color_book_cover','Book Cover Color','display_color_book_cf','b3c_library', 'normal', 'high' );	
-	add_meta_box('cf_details_book','Book Details','display_book_details_cf','b3c_library', 'normal', 'high' );	
+	add_meta_box('cf_preview_book', __('Preview book','ust-library'),'display_preview_book_cf','b3c_library', 'normal', 'high' );
+	add_meta_box('cf_color_book_cover', __('Book Cover Color','ust-library'),'display_color_book_cf','b3c_library', 'normal', 'high' );	
+	add_meta_box('cf_details_book', __('Book Details','ust-library'),'display_book_details_cf','b3c_library', 'normal', 'high' );	
 }
 
 function display_book_details_cf( $books ) {
